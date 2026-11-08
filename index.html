@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Lookline — six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece.">
+  <link rel="preload" as="image" href="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp" fetchpriority="high">
+  <title>Lookline — Try the Look</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header shopify-section-group-header-group">
+    <a href="./" class="brand" aria-label="Lookline home">
+      <img src="https://reel-ref-try-the-look.vercel.app/assets/nike-logo.svg" alt="Nike" width="68" height="24">
+      <span class="brand__name">LOOKLINE</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="./">Home</a>
+      <a href="https://nike-makknzjs.myshopify.com/pages/nike-orbit" target="_blank" rel="noopener noreferrer">Nike Orbit</a>
+      <a href="https://nike-makknzjs.myshopify.com/pages/scene-rail" target="_blank" rel="noopener noreferrer">Hand Rail Pro</a>
+      <a href="./" aria-current="page">Lookline</a>
+    </nav>
+    <button id="open-bag" class="bag-button" aria-label="Open styling bag">
+      <svg width="22" height="24" viewBox="0 0 24 26" aria-hidden="true"><path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+      <span data-cart-count>0</span>
+    </button>
+  </header>
+
+  <main>
+    <runway-section
+      id="Runway-template--28035983671601__the_runway_wdM8BG"
+      class="rw rw--add-icon rw--popup rw--list has-dividers has-border"
+      data-feel="balanced"
+      data-blur="true"
+      data-mblur="true"
+      data-style="ring"
+      data-mstyle="classic"
+      data-fit="true"
+      data-height-mode="original"
+      data-height-vh="100"
+      data-mheight-mode="custom"
+      data-mheight-vh="109"
+      data-reflect="false"
+      data-autoplay="true"
+      data-speed="5000"
+      data-after-add="stay"
+      data-bundle-code=""
+      data-msg-choose="Pick a size for: [items]"
+      data-msg-error="Couldn’t add to bag. Please try again."
+      data-msg-soldout="Sold out">
+    </runway-section>
+
+    <section class="catalog-explorer" aria-labelledby="catalog-title">
+      <div class="catalog-explorer__head">
+        <div>
+          <p class="eyebrow">The edit</p>
+          <h2 id="catalog-title">Shop the catalog</h2>
+        </div>
+        <p class="catalog-explorer__copy">Explore the pieces behind every look. Filter by category, search by name, and save your own point of view.</p>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="catalog-tabs" role="tablist" aria-label="Product categories">
+          <button class="catalog-tab is-active" data-category="all" role="tab" aria-selected="true">All pieces</button>
+          <button class="catalog-tab" data-category="shoes" role="tab" aria-selected="false">Shoes</button>
+          <button class="catalog-tab" data-category="tops" role="tab" aria-selected="false">Tops</button>
+          <button class="catalog-tab" data-category="layers" role="tab" aria-selected="false">Layers</button>
+        </div>
+        <label class="catalog-search"><span class="sr-only">Search products</span><input type="search" data-catalog-search placeholder="Search the edit" autocomplete="off"><span aria-hidden="true">⌕</span></label>
+      </div>
+      <div class="catalog-grid" data-catalog-grid></div>
+      <p class="catalog-empty" data-catalog-empty hidden>No pieces match that filter.</p>
+    </section>
+  </main>
+
+  <dialog id="bag-dialog" class="bag-dialog" aria-labelledby="bag-title">
+    <div class="bag-dialog__inner">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">Your edit</p>
+          <h2 id="bag-title">Styling bag</h2>
+        </div>
+        <button class="close-button" data-close-bag aria-label="Close styling bag">×</button>
+      </div>
+      <p class="bag-dialog__note">A local outfit shortlist. No payment or order is collected here. Open a piece on the original demo to continue.</p>
+      <div id="bag-items" class="bag-items"></div>
+      <p id="bag-total" class="bag-total"></p>
+      <div class="bag-dialog__foot">
+        <p>Reference prices; no order or payment has been placed.</p>
+        <div class="bag-dialog__actions">
+          <button id="export-bag" class="export-button" disabled>Download outfit shortlist</button>
+          <button id="checkout-bag" class="checkout-button" disabled>Proceed to checkout</button>
+          <button class="text-button" data-close-bag>Continue styling</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog id="checkout-dialog" class="checkout-dialog" aria-labelledby="checkout-title">
+    <div class="checkout-dialog__inner">
+      <div class="dialog-head">
+        <div><p class="eyebrow">Checkout simulation</p><h2 id="checkout-title">Ready when you are.</h2></div>
+        <button class="close-button" data-close-checkout aria-label="Close checkout">×</button>
+      </div>
+      <p class="checkout-dialog__copy">Choose a local simulation for your prototype review, or continue to Stripe’s test checkout. No live charge is made in this environment.</p>
+      <div class="checkout-summary" data-checkout-summary></div>
+      <label class="checkout-email"><span>Email for the test receipt</span><input type="email" data-checkout-email placeholder="you@example.com" autocomplete="email"></label>
+      <div class="checkout-actions">
+        <button class="simulate-button" data-simulate-checkout>Simulate successful payment</button>
+        <button class="stripe-button" data-stripe-checkout>Continue to Stripe test checkout <span aria-hidden="true">↗</span></button>
+      </div>
+      <p class="checkout-hint">Stripe test card: <strong>4242 4242 4242 4242</strong> · any future date · any CVC</p>
+    </div>
+  </dialog>
+  <div id="bag-status" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
